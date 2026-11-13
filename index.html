@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PriceWise – השוואת מחירי סופרמרקטים</title>
+<meta name="description" content="PriceWise – האפליקציה הישראלית שעוזרת לך לסרוק, להשוות ולחסוך בקניות הסופר. מחירים עדכניים מהרשתות הגדולות בישראל.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Heebo', 'sans-serif'] },
+        colors: {
+          brand: {
+            50: '#eefbf4', 100: '#d6f5e2', 200: '#aeebc8', 300: '#7adda9',
+            400: '#45c784', 500: '#20ab66', 600: '#148a52', 700: '#126e44',
+            800: '#135839', 900: '#114931'
+          }
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Heebo', sans-serif; }
+</style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 font-extrabold text-xl text-brand-700">
+        <span class="inline-flex w-8 h-8 rounded-lg bg-brand-500 text-white items-center justify-center text-sm">₪</span>
+        PriceWise
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-gray-600">
+        <a href="#home" class="hover:text-brand-700 transition">בית</a>
+        <a href="#privacy" class="hover:text-brand-700 transition">פרטיות</a>
+        <a href="#terms" class="hover:text-brand-700 transition">תנאי שימוש</a>
+        <a href="#support" class="hover:text-brand-700 transition">תמיכה</a>
+      </nav>
+      <a href="#support" class="sm:hidden text-sm font-medium text-brand-700">תמיכה</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
+    <div class="max-w-5xl mx-auto px-5 pt-16 pb-20 sm:pt-24 sm:pb-28 text-center">
+      <span class="inline-block bg-brand-100 text-brand-700 text-xs font-semibold px-3 py-1 rounded-full mb-5">
+        חדש בישראל 🇮🇱
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight text-gray-900">
+        סורקים, משווים<br class="sm:hidden"> וחוסכים <span class="text-brand-600">בסופר</span>
+      </h1>
+      <p class="mt-5 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        PriceWise סורקת בשבילכם ברקוד מוצר, ומראה תוך שניות היכן הוא הכי זול —
+        רמי לוי, יוחננוף, אושר עד, קרפור, ויקטורי ועוד עשרות רשתות, לפי הסניפים הקרובים אליכם.
+        בלי השוואות ידניות, בלי לנדוד בין אפליקציות.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a href="#support" class="px-6 py-3 rounded-xl bg-brand-600 text-white font-semibold shadow-lg shadow-brand-200 hover:bg-brand-700 transition">
+          לפרטים ותמיכה
+        </a>
+        <a href="#privacy" class="px-6 py-3 rounded-xl bg-white text-gray-700 font-semibold border border-gray-200 hover:border-brand-300 transition">
+          מדיניות הפרטיות
+        </a>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4 text-right">
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+          <div class="text-2xl mb-2">📷</div>
+          <h3 class="font-bold text-gray-900 mb-1">סריקה מהירה</h3>
+          <p class="text-sm text-gray-600">סורקים את הברקוד ומקבלים תוצאה כמעט מיידית, מכל זווית.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+          <div class="text-2xl mb-2">📍</div>
+          <h3 class="font-bold text-gray-900 mb-1">לפי האזור שלכם</h3>
+          <p class="text-sm text-gray-600">השוואה רלוונטית לסניפים הקרובים אליכם בלבד, לא מחירים ארציים סתמיים.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+          <div class="text-2xl mb-2">💸</div>
+          <h3 class="font-bold text-gray-900 mb-1">חיסכון אמיתי</h3>
+          <p class="text-sm text-gray-600">מחירים ומבצעים מעודכנים מהרשתות, כדי שתדעו בדיוק איפה משתלם לקנות.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Policy -->
+  <section id="privacy" class="border-t border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 py-16 sm:py-20">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">מדיניות פרטיות</h2>
+      <p class="text-sm text-gray-500 mb-10">תאריך עדכון אחרון: 13 בנובמבר 2026</p>
+
+      <div class="space-y-8 text-gray-700 leading-relaxed text-[15px]">
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">1. מבוא</h3>
+          <p>
+            מדיניות פרטיות זו מסבירה כיצד PriceWise ("האפליקציה", "השירות", "אנחנו") אוספת, משתמשת,
+            מאחסנת ומשתפת מידע בעת השימוש שלך באפליקציה. השימוש באפליקציה מהווה הסכמה לתנאי מדיניות זו.
+            אם אינך מסכים/ה לתנאים, אנא הימנע/י משימוש באפליקציה.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">2. איזה מידע אנו אוספים</h3>
+          <ul class="list-disc pr-5 space-y-2">
+            <li>
+              <b>מיקום גיאוגרפי:</b> באישורך, האפליקציה משתמשת בשירותי המיקום של המכשיר כדי להציג לך
+              השוואת מחירים רלוונטית לסניפי הסופרמרקטים הקרובים אליך (לדוגמה רמי לוי, יוחננוף, אושר עד,
+              קרפור, ויקטורי, שופרסל ורשתות נוספות). ניתן לבטל הרשאת מיקום בכל עת מהגדרות המכשיר — במקרה
+              כזה תוצג לך השוואה כללית/לפי בחירת עיר ידנית, ללא מיקום מדויק.
+            </li>
+            <li>
+              <b>מידע על מוצרים שנסרקו:</b> ברקודים שאתה סורק בעת שימוש בתכונת הסריקה, לצורך הצגת תוצאות
+              השוואת מחירים עבור אותו מוצר.
+            </li>
+            <li>
+              <b>פרטי חשבון:</b> אם תבחר/י להתחבר (באמצעות Google, Apple, או אימייל וסיסמה), נשמרים כתובת
+              אימייל ושם תצוגה בסיסי, לצורך זיהוי החשבון, שמירת העדפות אישיות ורשימות מועדפים.
+            </li>
+            <li>
+              <b>נתוני שימוש טכניים:</b> מידע כגון סוג מכשיר, גרסת מערכת הפעלה ונתוני ביצועים/תקלות,
+              לצורך שיפור השירות ואיתור תקלות.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">3. כיצד אנו משתמשים במידע</h3>
+          <p>
+            המידע משמש אותנו באופן בלעדי כדי לחשב ולהציג פערי מחירים בין סניפים ורשתות, להציג לך את הסניפים
+            הרלוונטיים ביותר באזורך, לשמור את ההיסטוריה וההעדפות שלך בין מכשירים (אם התחברת לחשבון), ולשפר
+            את דיוק ואמינות הנתונים המוצגים באפליקציה.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">4. שיתוף מידע עם צדדים שלישיים</h3>
+          <p>
+            <b>אנו לא מוכרים ולא משכירים מידע אישי מזהה לצדדים שלישיים</b>, ולא לצרכי שיווק של גורמים
+            חיצוניים. מידע עשוי להיות משותף רק במקרים הבאים:
+          </p>
+          <ul class="list-disc pr-5 space-y-2 mt-2">
+            <li>עם ספקי שירות תפעוליים (כגון שירותי אימות משתמשים, אחסון שרתים ותשתיות תקשורת) הפועלים
+              מטעמנו ובכפוף להתחייבויות סודיות, לצורך הפעלת האפליקציה בלבד.</li>
+            <li>כאשר הדבר נדרש על פי חוק, צו בית משפט, או כדי להגן על זכויותינו, המשתמשים או הציבור.</li>
+            <li>כנתונים סטטיסטיים מצטברים ואנונימיים בלבד (שאינם מאפשרים זיהוי משתמש ספציפי), למטרות ניתוח
+              ושיפור השירות.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">5. אבטחת מידע</h3>
+          <p>
+            אנו נוקטים באמצעי אבטחה סבירים ומקובלים בתעשייה (כגון הצפנת תעבורה, בקרת גישה לשרתים ואימות
+            זהות) כדי להגן על המידע שנאסף מפני גישה, שימוש או חשיפה לא מורשים. עם זאת, אין אפשרות להבטיח
+            הגנה מוחלטת מפני כל פגיעה אפשרית באבטחת מידע ברשת האינטרנט.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">6. זכויותיך</h3>
+          <p>
+            באפשרותך לבקש בכל עת לעיין במידע שנשמר עליך, לתקנו, או לבקש את מחיקתו המלאה מהמערכות שלנו
+            (כולל מחיקת חשבון). לשם כך, פנה/י אלינו בכתובת
+            <a href="mailto:support@pricewiseil.com" class="text-brand-700 font-semibold hover:underline">support@pricewiseil.com</a>,
+            ובקשתך תטופל בתוך זמן סביר.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">7. פרטיות קטינים</h3>
+          <p>
+            האפליקציה אינה מיועדת לשימוש על ידי ילדים מתחת לגיל 13, ואיננו אוספים במכוון מידע אישי מזהה
+            מקטינים בגיל זה. ככל שנודע לנו כי נאסף מידע כאמור, ננקוט בפעולות למחיקתו.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">8. שינויים במדיניות זו</h3>
+          <p>
+            אנו עשויים לעדכן מדיניות פרטיות זו מעת לעת. שינויים מהותיים יפורסמו בעמוד זה, בציון תאריך
+            העדכון בראש העמוד. המשך השימוש באפליקציה לאחר עדכון כאמור מהווה הסכמה למדיניות המעודכנת.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">9. יצירת קשר</h3>
+          <p>
+            לכל שאלה או בקשה בנושא פרטיות, ניתן לפנות אלינו בכתובת
+            <a href="mailto:support@pricewiseil.com" class="text-brand-700 font-semibold hover:underline">support@pricewiseil.com</a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms of Service -->
+  <section id="terms" class="border-t border-gray-100 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-5 py-16 sm:py-20">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">תנאי שימוש</h2>
+      <p class="text-sm text-gray-500 mb-10">תאריך עדכון אחרון: 13 בנובמבר 2026</p>
+
+      <div class="space-y-8 text-gray-700 leading-relaxed text-[15px]">
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">1. הסכמה לתנאים</h3>
+          <p>
+            הגלישה והשימוש באפליקציית PriceWise מהווים הסכמה מלאה לתנאי שימוש אלו. אם אינך מסכים/ה לתנאי
+            השימוש, אנא הימנע/י מהתקנת האפליקציה או משימוש בה.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">2. תיאור השירות</h3>
+          <p>
+            PriceWise הינה אפליקציה המציגה מידע משווה על מחירים ומבצעים במוצרי סופרמרקט, המבוסס על נתונים
+            המתפרסמים על ידי רשתות השיווק עצמן בהתאם לחובת השקיפות התחורית. השירות מוצע כפי שהוא ("AS IS"),
+            למטרות מידע בלבד.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">3. דיוק המידע ואחריות</h3>
+          <p>
+            אנו שואפים להציג מידע עדכני ומדויק ככל האפשר, אך מחירים, מבצעים וזמינות מוצרים עשויים להשתנות
+            על ידי הרשתות ללא הודעה מוקדמת, ועלולים להתעדכן באפליקציה בפער זמן קצר. <b>המחיר הסופי והמחייב
+            הוא זה המוצג בקופת הסניף בעת הרכישה.</b> PriceWise אינה אחראית לכל הפרש, טעות או נזק (ישיר או
+            עקיף) שייגרם כתוצאה מהסתמכות על המידע המוצג באפליקציה.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">4. חשבון משתמש</h3>
+          <p>
+            במקרה של הרשמה לחשבון, המשתמש מתחייב לשמור בסודיות את פרטי ההתחברות שלו ולעדכן אותנו באופן
+            מיידי בכל חשד לשימוש לא מורשה בחשבונו. המשתמש אחראי לנכונות הפרטים שמסר בעת ההרשמה.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">5. שימוש מותר</h3>
+          <p>
+            אין להשתמש באפליקציה למטרות בלתי חוקיות, לפגוע בתפקודה התקין (כגון קראולינג אוטומטי, הנדסה
+            לאחור או עומס מכוון על השרתים), או להעתיק ולהשתמש מחדש בתכני האפליקציה למטרות מסחריות ללא
+            אישור מפורש מראש ובכתב.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">6. קניין רוחני</h3>
+          <p>
+            כל זכויות הקניין הרוחני באפליקציה, לרבות העיצוב, הקוד, הלוגו והתוכן המקורי, שייכות ל-PriceWise
+            ו/או לבעליה, ואין לעשות בהם שימוש ללא קבלת הסכמה מפורשת מראש.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">7. הגבלת אחריות</h3>
+          <p>
+            השירות מסופק "כמות שהוא" (AS IS) וללא כל התחייבות לזמינות רצופה, נטולת תקלות או שגיאות.
+            PriceWise לא תהיה אחראית לכל נזק עקיף, תוצאתי או מיוחד הנובע משימוש או מאי-יכולת להשתמש
+            באפליקציה.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">8. שינויים בשירות ובתנאים</h3>
+          <p>
+            אנו שומרים לעצמנו את הזכות לעדכן, לשנות או להפסיק כל חלק מהשירות בכל עת, וכן לעדכן תנאי שימוש
+            אלו. המשך השימוש באפליקציה לאחר פרסום שינוי מהווה הסכמה לתנאים המעודכנים.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">9. דין וסמכות שיפוט</h3>
+          <p>
+            על תנאי שימוש אלו יחולו דיני מדינת ישראל בלבד, וסמכות השיפוט הבלעדית בכל עניין הנוגע להם
+            תהיה נתונה לבתי המשפט המוסמכים במחוז תל אביב-יפו.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg text-gray-900 mb-2">10. יצירת קשר</h3>
+          <p>
+            לכל שאלה בנוגע לתנאי שימוש אלו, ניתן לפנות אלינו בכתובת
+            <a href="mailto:support@pricewiseil.com" class="text-brand-700 font-semibold hover:underline">support@pricewiseil.com</a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Support -->
+  <section id="support" class="border-t border-gray-100">
+    <div class="max-w-3xl mx-auto px-5 py-16 sm:py-20 text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3">תמיכה ויצירת קשר</h2>
+      <p class="text-gray-600 max-w-xl mx-auto mb-8">
+        יש לך שאלה, בעיה טכנית, הצעה לשיפור, או בקשה הנוגעת לפרטיות ולחשבון שלך?
+        אנחנו כאן בשבילך — נשתדל לחזור אליך בהקדם האפשרי.
+      </p>
+      <a href="mailto:support@pricewiseil.com"
+         class="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-brand-600 text-white font-bold text-lg shadow-lg shadow-brand-200 hover:bg-brand-700 transition">
+        ✉️ support@pricewiseil.com
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-5 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+      <p>© 2026 PriceWise. כל הזכויות שמורות.</p>
+      <div class="flex items-center gap-5">
+        <a href="#privacy" class="hover:text-brand-700 transition">פרטיות</a>
+        <a href="#terms" class="hover:text-brand-700 transition">תנאי שימוש</a>
+        <a href="#support" class="hover:text-brand-700 transition">תמיכה</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
